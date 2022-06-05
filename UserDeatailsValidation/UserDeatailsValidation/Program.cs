@@ -18,4 +18,3 @@ string PassWord = Console.ReadLine();
 UserDeatailsValidation.RegexUserDetails User_Password = new UserDeatailsValidation.RegexUserDetails();
 User_Password.PasswordValidation(PassWord);
 
-
