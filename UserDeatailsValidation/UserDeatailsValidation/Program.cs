@@ -13,3 +13,9 @@ string MobileNo = Console.ReadLine();
 UserDeatailsValidation.RegexUserDetails MobileNo_Number = new UserDeatailsValidation.RegexUserDetails();
 MobileNo_Number.MobileValidation(MobileNo);
 
+Console.WriteLine("Enter Password");
+string PassWord = Console.ReadLine();
+UserDeatailsValidation.RegexUserDetails User_Password = new UserDeatailsValidation.RegexUserDetails();
+User_Password.PasswordValidation(PassWord);
+
+

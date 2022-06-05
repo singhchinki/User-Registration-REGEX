@@ -11,7 +11,8 @@ namespace UserDeatailsValidation
     {
          const string NAME = "^[A-Z]{1}[a-z]{2,}$";
          const string EMAIL_ID = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
-         const string CONTACT = "^[0-9]{1,3}[ ][789][0-9]{9} $";
+         const string CONTACT = "^[0-9]{1,3}[ ][789][0-9]{9}$";
+        const string PASSWORD = "^[A-Za-z]{8,}?$";
         public void FirstNameValidation(string FirstName)
          {
             if (Regex.IsMatch(FirstName, NAME))
@@ -47,6 +48,15 @@ namespace UserDeatailsValidation
                 return;
             }
             Console.WriteLine("Mobile  number is not valid");
+        }
+        public void PasswordValidation(string PassWord)
+        {
+            if (Regex.IsMatch(PassWord, PASSWORD))
+            {
+                Console.WriteLine("Password is valid. ");
+                return;
+            }
+            Console.WriteLine("Password is not valid");
         }
     }
 
