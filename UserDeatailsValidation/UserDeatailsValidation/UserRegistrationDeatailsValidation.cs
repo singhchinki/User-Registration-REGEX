@@ -12,7 +12,8 @@ namespace UserDeatailsValidation
          const string NAME = "^[A-Z]{1}[a-z]{2,}$";
          const string EMAIL_ID = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
          const string CONTACT = "^[0-9]{1,3}[ ][789][0-9]{9}$";
-        const string PASSWORD = "^[A-Z]{1,}[a-z][0-9]{1,}[~!@#$%^&*]{1,}$";
+         const string PASSWORD = "^[A-Z]{1,}[a-z]{8,}[0-9]{1,}[~!@#$%^&*]{1,}?$";
+        const string SAMPLE_MAIL = "^[a-z]+([._+-][0-9a-z]+)*[@][0-9a-z]+.[a-z]{2,3}(.[a-z]{2,3})?$";
         public void FirstNameValidation(string FirstName)
          {
             if (Regex.IsMatch(FirstName, NAME))
@@ -57,6 +58,14 @@ namespace UserDeatailsValidation
                 return;
             }
             Console.WriteLine("Password is not valid");
+        }
+        public string EmailSampleChecker(string Sample_Email)
+        {
+            if (Regex.IsMatch(Sample_Email, SAMPLE_MAIL))
+            {
+                return "Valid";
+            }
+            return "Not Valid";
         }
     }
 
