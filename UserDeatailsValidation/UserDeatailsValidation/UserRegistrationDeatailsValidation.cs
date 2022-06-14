@@ -63,7 +63,7 @@ namespace UserDeatailsValidation
             Console.WriteLine("Password is not valid");
                return false;
         }
-
+        //-Uc-11-multiple email entry Validation
         public bool EmailSampleChecker(string Sample_Email)
         {
             if (Regex.IsMatch(Sample_Email, SAMPLE_MAIL))
