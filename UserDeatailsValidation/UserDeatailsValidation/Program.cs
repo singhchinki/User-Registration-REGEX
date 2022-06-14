@@ -23,6 +23,6 @@ string[] Sample_Email = File.ReadAllLines(@"D:\BridgeLabzFellowship\User-Registr
 UserDeatailsValidation.RegexUserDetails Sample_Email_Id = new UserDeatailsValidation.RegexUserDetails();
 for (int i = 0; i < Sample_Email.Length; i++)
 {
-    string Emails = Sample_Email_Id.EmailSampleChecker(Sample_Email[i]);
+    bool Emails = Sample_Email_Id.EmailSampleChecker(Sample_Email[i]);
     Console.WriteLine(Sample_Email[i] + " " + Emails);
 }

@@ -45,5 +45,68 @@ namespace UserDetailTest
 
 
         }
+        [Test]
+        public void GivenInvalidFirstName_ChecksRegexPattern_ThrowsExcapetion()
+        {
+            try
+            {
+                string fName = "hari";
+                UserDeatailsValidation.RegexUserDetails check = new UserDeatailsValidation.RegexUserDetails();
+                bool actualResult = check.FirstNameValidation (fName);
+            }
+            catch (UserDeatailsValidation.UserDetailsException exc)
+            {
+                Assert.AreEqual("Invalid First Name", exc.Message);
+            }
+
+        }
+        [Test]
+        public void GivenInvalidLastName_ChecksRegexPattern_ThrowsExcapetion()
+        {
+            try
+            {
+                string lName = "H";
+                UserDeatailsValidation.RegexUserDetails check = new UserDeatailsValidation.RegexUserDetails();
+                bool actualResult = check.LastNameValidation (lName);
+            }
+            catch (UserDeatailsValidation.UserDetailsException exc)
+            {
+                Assert.AreEqual("Invalid Last Name", exc.Message);
+            }
+
+        }
+        [Test]
+        public void GivenInvalidEmailId_ChecksRegexPattern_ThrowsExcapetion()
+        {
+            try
+            {
+                string mail = "hari@gm.1";
+                UserDeatailsValidation.RegexUserDetails check = new UserDeatailsValidation.RegexUserDetails();
+                bool actualResult = check.EmailSampleChecker (mail);
+            }
+            catch (UserDeatailsValidation.UserDetailsException exc)
+            {
+                Assert.AreEqual("Invalid EmailID", exc.Message);
+            }
+
+        }
+        [Test]
+        public void GivenInvalidPhoneNo_ChecksRegexPattern_ThrowsExcapetion()
+        {
+            try
+            {
+                string phno = "98989898";
+                UserDeatailsValidation.RegexUserDetails check = new UserDeatailsValidation.RegexUserDetails();
+                bool actualResult = check.MobileValidation (phno);
+            }
+            catch (UserDeatailsValidation.UserDetailsException exc)
+            {
+                Assert.AreEqual("Invalid Phone Number", exc.Message);
+            }
+
+        
+
+        }
+
     }
 }
