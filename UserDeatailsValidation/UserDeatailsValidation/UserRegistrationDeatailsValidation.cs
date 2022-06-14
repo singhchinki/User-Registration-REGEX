@@ -13,24 +13,26 @@ namespace UserDeatailsValidation
          const string EMAIL_ID = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
          const string CONTACT = "^[0-9]{1,3}[ ][789][0-9]{9}$";
          const string PASSWORD = "^[A-Z]{1,}[a-z]{8,}[0-9]{1,}[~!@#$%^&*]{1,}?$";
-        const string SAMPLE_MAIL = "^[a-z]+([._+-][0-9a-z]+)*[@][0-9a-z]+.[a-z]{2,3}(.[a-z]{2,3})?$";
-        public void FirstNameValidation(string FirstName)
+         const string SAMPLE_MAIL = "^[a-z]+([._+-][0-9a-z]+)*[@][0-9a-z]+.[a-z]{2,3}(.[a-z]{2,3})?$";
+        public bool FirstNameValidation(string FirstName)
          {
             if (Regex.IsMatch(FirstName, NAME))
             {
                Console.WriteLine("First name is valid. ");
-               return;
+               return true;
             }
                Console.WriteLine("First name is not valid");
+            return false;
          }
-        public void LastNameValidation(string LastName)
+        public bool LastNameValidation(string LastName)
         {
             if (Regex.IsMatch(LastName, NAME))
             {
                 Console.WriteLine("Last name is valid. ");
-                return;
+                return true;
             }
             Console.WriteLine("Last name is not valid");
+            return false;
         }
         public void EmailValidation(string Email)
         {
@@ -41,31 +43,36 @@ namespace UserDeatailsValidation
             }
             Console.WriteLine("Email ID is not valid");
         }
-        public void MobileValidation(string MobileNo)
+        public bool MobileValidation(string MobileNo)
         {
             if (Regex.IsMatch(MobileNo, CONTACT))
             {
                 Console.WriteLine("Mobile number is valid. ");
-                return;
+                return true;
             }
             Console.WriteLine("Mobile  number is not valid");
+            return false;
         }
-        public void PasswordValidation(string PassWord)
+        public bool PasswordValidation(string PassWord)
         {
             if (Regex.IsMatch(PassWord, PASSWORD))
             {
                 Console.WriteLine("Password is valid. ");
-                return;
+                return true;
             }
             Console.WriteLine("Password is not valid");
+               return false;
         }
-        public string EmailSampleChecker(string Sample_Email)
+
+        public bool EmailSampleChecker(string Sample_Email)
         {
             if (Regex.IsMatch(Sample_Email, SAMPLE_MAIL))
             {
-                return "Valid";
+                Console.WriteLine("valid email" + Sample_Email);
+                return true;
             }
-            return "Not Valid";
+            Console.WriteLine("Invalid email" + Sample_Email);
+            return false;
         }
     }
 
